@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "State",
+  "description": "State Specific Criteria",
+  "type": "object",
+  "properties": {
+    "label": {
+      "description": "State Name",
+      "type": "string"
+    },
+    "abbreviation": {
+      "description": "State abbreviation",
+      "type": "string"
+    },
+    "minLoanAmount": {
+      "type": "number",
+      "minimum": 0
+    },
+    "minAge": {
+      "type": "number",
+      "minimum": 0
+    }
+  }
+}

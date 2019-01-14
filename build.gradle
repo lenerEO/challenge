@@ -1,0 +1,27 @@
+group 'com.upgrade.qa'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.0'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version: '3.141.0'
+    compile group: 'info.cukes', name: 'cucumber-testng', version: '1.2.5'
+    compile group: 'info.cukes', name: 'cucumber-java', version: '1.2.5'
+    compile group: 'org.everit.json', name: 'org.everit.json.schema', version: '1.0.0'
+    compile group: 'com.github.javafaker', name: 'javafaker', version: '0.16'
+    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
+    testCompile fileTree('lib')
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/suites/challenge.xml'
+    }
+}
